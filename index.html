@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editor Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-icon" onclick="toggleAuth()" style="cursor: pointer;"><i class="fas fa-video"></i></div>
+            <h1 class="animate-typing">Welcome to Video Editor Platform</h1>
+            <p class="animate-fade-in delay-1">Manage clients, organize folders, and upload videos date-wise. Streamline your editing workflow with professional tools and seamless playback. Trusted by 1000+ video editors worldwide.</p>
+            <div id="auth-section" style="display: none;"> <!-- Hidden by default -->
+                <div id="login-form" class="login-card animate-fade-in delay-2">
+                    <h3><i class="fas fa-lock"></i> Owner Login</h3>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                    <button onclick="login()" class="btn-primary">Login</button>
+                    <p id="login-message"></p>
+                </div>
+                <div id="owner-controls" style="display: none;">
+                    <button id="logout-btn" onclick="logout()" class="btn-secondary">Logout (Owner Mode)</button>
+                    <button onclick="hideAuth()" class="btn-secondary">Hide Login</button>
+                </div>
+            </div>
+            <div class="hero-buttons" id="hero-buttons" style="display: none;">
+                <button onclick="document.getElementById('add-client').scrollIntoView()" class="btn-primary">Get Started</button>
+                <button onclick="document.getElementById('clients').scrollIntoView()" class="btn-secondary">Explore Clients</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rest of the HTML remains the same -->
+    <section class="features" id="features-section">
+        <!-- Features section remains the same -->
+    </section>
+
+    <main id="main-content" style="display: none;">
+        <section id="add-client" class="section">
+            <h2>Add a New Client</h2>
+            <form id="client-form" class="form-card">
+                <input type="text" id="client-name" placeholder="Enter Client Name" required>
+                <button type="submit" class="btn-primary">Add Client</button>
+            </form>
+        </section>
+
+        <section id="clients" class="section">
+            <h2>Your Clients & Videos</h2>
+            <div id="client-list" class="client-grid">
+                <!-- Clients will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="viewer-message" class="viewer-notice" style="display: none;">
+        <p>You are in view-only mode. You can watch videos below. Contact the owner for full access.</p>
+        <div id="viewer-client-list" class="client-grid">
+            <!-- Viewer-only video display -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Video Editor Platform. Built for professionals.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
